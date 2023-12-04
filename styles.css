@@ -1,0 +1,101 @@
+:root {
+  --primary-clr: #222610;
+  --secondary-clr: #d0a000;
+}
+
+body {
+  height: 100vh;
+  box-sizing: border-box;
+  background-color: var(--primary-clr);
+  color: var(--secondary-clr);
+  font-family: "Press Start 2P", serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  font-size: 2rem;
+}
+
+.gameboard {
+  height: 500px;
+  width: 500px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.cell {
+  border: 2px solid var(--secondary-clr);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.cell:first-child,
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+
+.cell:nth-child(3n + 1) {
+  border-left: none;
+}
+
+.cell:nth-child(3n + 3) {
+  border-right: none;
+}
+
+.cell:last-child,
+.cell:nth-child(8),
+.cell:nth-child(7) {
+  border-bottom: none;
+}
+
+.cell:hover {
+  background-color: rgba(208, 160, 0, 0.1);
+
+}
+.btn {
+  font-size: 1.5rem;
+  background: var(--secondary-clr);
+  color: var(--primary-clr);
+  padding: 0.8em;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(75%);
+
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .title {
+    font-size: 1rem;
+  }
+
+  .gameboard {
+    height: 250px;
+    width: 250px;
+  }
+
+  .cell {
+    font-size: 1rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+}
