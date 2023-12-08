@@ -83,8 +83,6 @@ const checkWinningCondtion = (board) => {
 
 const updateGameOver = () => {
   audio_winner.play();
-  const gameboard = document.querySelector(".gameboard");
-  gameboard.remove();
   restartGame.classList.remove("hidden");
 };
 
@@ -120,6 +118,8 @@ const Game = (() => {
   };
 
   const restart = () => {
+    const gameboard = document.querySelector(".gameboard");
+    gameboard.remove();
     restartGame.classList.add("hidden");
     title.textContent = "";
     Game.start();
